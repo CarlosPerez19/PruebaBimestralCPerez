@@ -1,20 +1,70 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Formulario Firebase</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+    <ion-list>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input type="text" formControlName="apellido"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Cedula</ion-label>
+        <ion-input type="text" formControlName="cedula"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Telefono</ion-label>
+        <ion-input type="text" formControlName="telefono"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="text" formControlName="correo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Institucion</ion-label>
+        <ion-input type="text" formControlName="institucion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Direccion</ion-label>
+        <ion-input type="text" formControlName="direccion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" formControlName="edad"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Fecha de Nacimiento</ion-label>
+        <ion-input type="date" formControlName="fechaNacimiento"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Género</ion-label>
+        <ion-select formControlName="genero" required>
+          <ion-select-option value="M">Masculino</ion-select-option>
+          <ion-select-option value="F">Femenino</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-button expand="full" type="submit">
+      Enviar
+    </ion-button>
+  </form>
 </ion-content>
